@@ -8,6 +8,8 @@ TagManager:
   - Thruster
   - Cell
   - Blocks
+  - Planet
+  - Sun
   layers:
   - Default
   - TransparentFX
