@@ -14,8 +14,13 @@ public class ShipManagement : MonoBehaviour {
 	public Transform cube;
 	public Transform cockPitPref;
 	public Transform thruster;
+	public Transform cannon;
+	public Transform gattlingGun;
+	public Transform plasmaCannon;
 
 	public Transform cockPit;
+
+	List<Transform> guns = new List<Transform>();
 
 	// Use this for initialization
 	void Start () {
@@ -25,7 +30,12 @@ public class ShipManagement : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-
+		if (Input.GetMouseButtonDown (0)) {
+			foreach(Transform gun in guns)
+			{
+				gun.gameObject.SendMessage ("fire");
+			}
+		}
 	}
 
 	//Creates the block specified by its id within the save file
@@ -48,6 +58,27 @@ public class ShipManagement : MonoBehaviour {
 		{
 			newBlock = Instantiate(cockPitPref, position, transform.rotation) as Transform;
 			newBlock.Rotate(new Vector3(0,90*rotation,0));
+		}
+
+		if(blockID == "401")
+		{
+			newBlock = Instantiate(cannon, position, transform.rotation) as Transform;
+			newBlock.Rotate(new Vector3(0,90*rotation,0));
+			guns.Add(newBlock);
+		}
+
+		if(blockID == "402")
+		{
+			newBlock = Instantiate(gattlingGun, position, transform.rotation) as Transform;
+			newBlock.Rotate(new Vector3(0,90*rotation,0));
+			guns.Add(newBlock);
+		}
+
+		if(blockID == "403")
+		{
+			newBlock = Instantiate(plasmaCannon, position, transform.rotation) as Transform;
+			newBlock.Rotate(new Vector3(0,90*rotation,0));
+			guns.Add(newBlock);
 		}
 
 		return newBlock;

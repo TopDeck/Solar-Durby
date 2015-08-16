@@ -16,6 +16,9 @@ public class ShipBuilder : MonoBehaviour {
 	public Transform cube;
 	public Transform cockPit;
 	public Transform thruster;
+	public Transform cannon;
+	public Transform gattlingGun;
+	public Transform plasmaCannon;
 
 	public Transform shipManager;
 	public Transform selectedBlock;
@@ -103,12 +106,33 @@ public class ShipBuilder : MonoBehaviour {
 			}
 			selectedBlock = createBlock(cockPit);
 		}
+
+		if (GUI.Button (new Rect (5, 125, 100, 30), "Cannon")) {
+			if(selectedBlock != null){
+				Destroy(selectedBlock.gameObject);
+			}
+			selectedBlock = createBlock(cannon);
+		}
+
+		if (GUI.Button (new Rect (5, 155, 100, 30), "GattlingGun")) {
+			if(selectedBlock != null){
+				Destroy(selectedBlock.gameObject);
+			}
+			selectedBlock = createBlock(gattlingGun);
+		}
+
+		if (GUI.Button (new Rect (5, 185, 100, 30), "PlasmaCannon")) {
+			if(selectedBlock != null){
+				Destroy(selectedBlock.gameObject);
+			}
+			selectedBlock = createBlock(plasmaCannon);
+		}
 		
-		if (GUI.Button (new Rect (5, 205, 100, 30), "Save")) {
+		if (GUI.Button (new Rect (5, 235, 100, 30), "Save")) {
 			saveShip();
 		}
 		
-		if (GUI.Button (new Rect (5, 235, 100, 30), "Load")) {
+		if (GUI.Button (new Rect (5, 265, 100, 30), "Load")) {
 			loadShip();
 		}
 	}

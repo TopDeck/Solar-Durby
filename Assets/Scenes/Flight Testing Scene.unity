@@ -322,6 +322,9 @@ MonoBehaviour:
   cube: {fileID: 421700, guid: 34b76de14bb0f964da9b572ee64ca2a0, type: 2}
   cockPitPref: {fileID: 468220, guid: b46d2eedefe41d94e9cc09b6ba205460, type: 2}
   thruster: {fileID: 465654, guid: bf7b32ace32a46d47b90de2654403979, type: 2}
+  cannon: {fileID: 456588, guid: fd470c132384c1747ac533c527f6a421, type: 2}
+  gattlingGun: {fileID: 460996, guid: 1ff81c69b16ad354192cc9bd9a698ea3, type: 2}
+  plasmaCannon: {fileID: 458708, guid: 7dde9f9b9edf1d14a9960f1f5820e877, type: 2}
   cockPit: {fileID: 0}
 --- !u!1 &1573846930
 GameObject:

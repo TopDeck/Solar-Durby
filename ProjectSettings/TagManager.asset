@@ -8,6 +8,7 @@ TagManager:
   - Thruster
   - Cell
   - Blocks
+  - Weapon
   layers:
   - Default
   - TransparentFX
